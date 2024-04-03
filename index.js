@@ -23,3 +23,32 @@ if (document.readyState === "loading") {
   // run the function now
   doEverything();
 }
+
+function findElement() {
+  const teacher = document.querySelector(".subtitle"); //returns the first element that matches a specified CSS selector(s) in the document.
+
+  console.log(teacher);
+  // Define a constant changeMe equal to passing the string 'button' to document.querySelector.
+  // Log changeMe.
+  const changeMe = document.querySelector("button");
+  console.log(changeMe);
+}
+
+function findAllParagraphs() {
+  const paragraphs = document.querySelectorAll("p"); //returns all elements in the document that matches a specified
+  // CSS selector(s), as a static NodeList object.
+
+  paragraphs.forEach((paragraph) => console.log(paragraph));
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", findElement);
+} else {
+  findElement();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", findAllParagraphs);
+} else {
+  findAllParagraphs();
+}
