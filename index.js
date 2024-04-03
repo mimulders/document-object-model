@@ -41,6 +41,33 @@ function findAllParagraphs() {
   paragraphs.forEach((paragraph) => console.log(paragraph));
 }
 
+//Define a function onClick that takes an event argument and logs it.
+function onClick(event) {
+  console.log(event);
+  const changeMe = document.querySelector("button");
+  changeMe.textContent = aname;
+}
+
+function main() {
+  // Select the element with a query.
+  // Then, pass an event name and callback to its addEventListener method.
+  // The callback will run when that event occurs on that element.
+  const subject = document.querySelector("h3");
+  subject.addEventListener(
+    "click", // event name
+    () => console.log("clicked") // callback
+  );
+
+  const changeMe = document.querySelector("button");
+  changeMe.addEventListener("click", onClick);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", main);
+} else {
+  main();
+}
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", findElement);
 } else {
